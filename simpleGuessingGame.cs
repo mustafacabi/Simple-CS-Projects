@@ -10,15 +10,34 @@ namespace simpleGuessingGame
     {
         static void Main(string[] args)
         {
-            string secretWord = "hello";
+            string secretWord = "giraffe";
             string guess = "";
+            int guessCount = 0;
+            int guessLimit = 3;
+            bool outOfGuesses = false;
 
-            while (guess != secretWord)
+            while (guess != secretWord && !outOfGuesses)
             {
-                Console.Write("Enter guess: ");
-                guess = Console.ReadLine();
+                if (guessLimit > guessCount)
+                {
+                    Console.Write("Enter guess: ");
+                    guess = Console.ReadLine();
+                    guessCount++;
+                }
+                else
+                {
+                    outOfGuesses = true;
+                }
             }
-            Console.WriteLine("You win!");
+            if (outOfGuesses)
+            {
+                Console.WriteLine("You Lose!");
+            }
+            else
+            {
+                Console.WriteLine("You Win!");
+            }
+
             Console.ReadLine();
         }
     }
