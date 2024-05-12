@@ -21,9 +21,9 @@ namespace study
                 Console.WriteLine(num1 / num2);
                 Console.ReadLine();
             }
-            catch 
+            catch (Exception e)
             {
-                Console.WriteLine("Error...");
+                Console.WriteLine(e.Message);
                 Console.ReadLine();
             }
             
